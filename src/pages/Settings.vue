@@ -12,6 +12,6 @@ export default {};
 
 <style>
 h2 {
-  background: green
+  background: red
 }
 </style>
