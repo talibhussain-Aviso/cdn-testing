@@ -2,7 +2,7 @@
   <div>
     <navbar />
     <Dashboard/>
-    <!-- <router-view /> -->
+    <router-view />
 
   </div>
 </template>

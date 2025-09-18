@@ -6,7 +6,7 @@
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --watch --config webpack.config.js"
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^2.5.22",
     "vue-router": "^3.5.3"
   },
