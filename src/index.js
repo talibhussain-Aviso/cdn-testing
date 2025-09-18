@@ -4,7 +4,7 @@ import App from './App.vue'
 
 import Dashboard from './pages/Dashboard.vue'
 
-// Option 1: Direct mounting (works in plain HTML with UMD build)
+// Option 1: Injects app directly inside element selector (works in plain HTML with UMD build)
 export function mount(el, props = {}) {
   new Vue({
     router,
@@ -18,7 +18,7 @@ const components = {
   Dashboard
 }
 
-// Option 2: Vue plugin
+// Option 2: Register every component in vue
 const LeadIntelligenceModule = {
   install(Vue) {
     Object.entries(components).forEach(([name, component]) => {

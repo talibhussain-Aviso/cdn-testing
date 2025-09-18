@@ -1,17 +1,16 @@
 <template>
   <div>
     <h2>Settings Page</h2>
-    <p>Module settings go here.</p>
+    <p>Module settings goes here.</p>
   </div>
 </template>
 
 <script>
-export default {};
+  export default {};
 </script>
 
-
 <style scoped>
-h2 {
-  background: red
-}
+  h2 {
+    background: red
+  }
 </style>
