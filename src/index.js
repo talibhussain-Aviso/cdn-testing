@@ -18,3 +18,8 @@ export default {
   App,
   router,
 }
+
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(LeadIntelligenceModule)
+}
