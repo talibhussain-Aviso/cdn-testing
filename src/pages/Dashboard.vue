@@ -1,10 +1,17 @@
 <template>
   <div>
-    <h2>Dashboard Page From CDN Pro updated</h2>
-    <p>Welcome to the module dashboard.</p>
+    <h2>This is Micro Frontend App Dashboard</h2>
+    <p>{{description}}</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+   props: {
+    description: {
+        type: String
+    },
+   
+    }
+};
 </script>

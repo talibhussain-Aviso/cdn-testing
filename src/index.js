@@ -2,6 +2,8 @@ import Vue from 'vue'
 import router from './router'
 import App from './App.vue'
 
+import Dashboard from './pages/Dashboard.vue'
+
 // Option 1: Direct mounting (works in plain HTML with UMD build)
 export function mount(el, props = {}) {
   new Vue({
@@ -10,12 +12,20 @@ export function mount(el, props = {}) {
   }).$mount(el)
 }
 
-// Option 2: Vue plugin (works when imported into another Vue app)
+// Collect all components
+const components = {
+  'LeadIntelligenceModule': App,
+  Dashboard
+}
+
+// Option 2: Vue plugin
 const LeadIntelligenceModule = {
   install(Vue) {
-    Vue.component('LeadIntelligenceModule', App)
+    Object.entries(components).forEach(([name, component]) => {
+      Vue.component(name, component)
+    })
   },
-  App,
+  ...components, // so they’re also accessible directly
   router,
 }
 
