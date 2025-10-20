@@ -26,8 +26,8 @@ const LeadIntelligenceModule = {
     Object.entries(components).forEach(([name, component]) => {
       Vue.component(name, component)
     })
-    console.log('options', options)
-    console.log('store', options.store)
+    console.log('options >>', options)
+    console.log('store >>>', options.store)
     Vue.mixin({
       beforeCreate() {
         const storeInstance = this.$store;

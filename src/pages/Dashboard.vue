@@ -4,7 +4,7 @@
     data : {{ getTest }}
     <input type="text" v-model="test" />
     <button @click="setTest(test)">Set Test</button>
-    <lead-intel-grid />
+    <!-- <lead-intel-grid /> -->
   </div>
 </template>
 

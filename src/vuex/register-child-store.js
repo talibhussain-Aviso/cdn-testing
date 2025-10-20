@@ -62,7 +62,7 @@ export function registerChildStore(store, moduleName, moduleDef, opts = {}) {
         };
 
         store._mutations[fullKey].push(wrapped);
-        console.log(`✅ registered mutation: ${fullKey}`);
+        console.log(`✅ registered mutation >>>>: ${fullKey}`);
       });
     }
 
