@@ -28,28 +28,15 @@ const LeadIntelligenceModule = {
     })
     console.log('options >>', options)
     console.log('store >>>', options.store)
-    Vue.mixin({
-      beforeCreate() {
-        const storeInstance = this.$store;
-        if (!storeInstance) return;
-    
-        const opts = this.$options || {};
-        const compName = opts.name || (this.$vnode && this.$vnode.tag && this.$vnode.tag.replace(/^vue-component-/, ''));
-        const isMicroByName = compName && Object.prototype.hasOwnProperty.call(components, compName);
-        const ctorOpts = opts.Ctor && opts.Ctor.options ? opts.Ctor.options : opts;
-        const isMicroByFlag = ctorOpts && ctorOpts.__IS_MICRO_COMPONENT;
-    
-        if (!isMicroByName && !isMicroByFlag) {
-          return;
-        }
-    
-        try {
-          registerChildStore(storeInstance, MODULE_NAME, leadIntelligenceChild);
-        } catch (err) {
-          console.error('Failed to register child module from mixin:', err);
-        }
-      },
-    });
+
+    const storeInstance = options.store;
+    if (!storeInstance) return;
+
+    try {
+      registerChildStore(storeInstance, MODULE_NAME, leadIntelligenceChild);
+    } catch (err) {
+      console.error('Failed to register child module from mixin:', err);
+    }
   },
 
   ...components,
